@@ -31,7 +31,7 @@ var currentDirection //of the next track segment
 // Simulation settings
 var ticks = 0
 var generation = 0
-var maxticks = 100
+var maxticks = 500
 
 // Population settings
 var population = []
