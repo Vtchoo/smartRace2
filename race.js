@@ -51,9 +51,9 @@ const nnActivation = "softsign"
 // The simulation itself
 
 function preload(){
-	carSprite = loadImage("./images/car.png")
+	//carSprite = loadImage("./images/car.png")
 	//carSprite = loadImage("car.png")
-	//carSprite = loadImage("https://raw.githubusercontent.com/Vtchoo/smartRace/master/images/car.png")
+	carSprite = loadImage("https://raw.githubusercontent.com/Vtchoo/smartRace/master/images/car.png")
 }
 
 function setup(){

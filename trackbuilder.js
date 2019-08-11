@@ -207,5 +207,10 @@ function setTrack(){
 	exibMap.position(20 + (buttonWidth + 5)*1, canvas.height - buttonHeight - 20)
 	exibMap.mousePressed( () => {showMap = !showMap} )
 
+	incrTime = createButton("Increase simul. time")
+	incrTime.size(buttonWidth, buttonHeight)
+	incrTime.position(20 + (buttonWidth + 5)*2, canvas.height - buttonHeight - 20)
+	incrTime.mousePressed( () => {maxticks += 100} )
+
 	phase = "setup"
 }
