@@ -51,9 +51,9 @@ const nnActivation = "softsign"
 // The simulation itself
 
 function preload(){
-	carSprite = loadImage("./images/car.png")
+	//carSprite = loadImage("./images/car.png")
 	//carSprite = loadImage("car.png")
-	//carSprite = loadImage("https://raw.githubusercontent.com/Vtchoo/smartRace/master/images/car.png")
+	carSprite = loadImage("https://raw.githubusercontent.com/Vtchoo/smartRace/master/images/car.png")
 }
 
 function setup(){
@@ -160,7 +160,7 @@ function draw(){
 			}
 
 			population.forEach( function(individual){
-				individual.pos = newVector(start.x, start.y)
+				individual.pos = newVector(start.x + Math.random(), start.y + Math.random())
 				individual.speed = 0
 				individual.direction = direction
 				individual.acceleration = 0
