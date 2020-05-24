@@ -19,9 +19,10 @@ function car(startX, startY, startDir){
 		this.speed += this.acceleration
 		if (this.speed < -2){ this.speed = -2 }
 		if ( trackMap[Math.floor(this.pos.x/resolution)][Math.floor(this.pos.y/resolution)] == 0){ this.speed = 0}
+
 		this.pos.add(
-			this.speed * Math.cos(this.direction), 
-			this.speed * Math.sin(this.direction))
+			this.speed * Math.cos(this.direction) * avgDeltaTime / (1/30), 
+			this.speed * Math.sin(this.direction) * avgDeltaTime / (1/30))
 	}
 	
 	// Renders car on canvas
@@ -38,8 +39,9 @@ function car(startX, startY, startDir){
 
 	// Inputs for driving the car
 	this.drive = function(input){
-		this.acceleration = input[0] * .05
-		this.direction += input[1] * .05 * ( 1 - 1/(1 + Math.abs(this.speed)) ) * Math.sign(this.speed)
+		this.acceleration = (input[0] > 0 && this.speed >= 0) || this.speed < 0 ? input[0] * .05 : input[0] * .15
+		//this.acceleration = input[0] * .05
+		this.direction += input[1] * .05 * ( 1 - 1/(1 + Math.abs(this.speed)) ) * Math.sign(this.speed) * avgDeltaTime / (1/30)
 	}
 
 	// Gets sensors' data

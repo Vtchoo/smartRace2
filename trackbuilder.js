@@ -170,7 +170,9 @@ function createGrid(){
 function setTrack(){
 
 	// Removes the track builder
-	buttons.forEach( function(element){ element.remove() })
+	if(typeof buttons != "undefined"){
+		buttons.forEach( function(element){ element.remove() })
+	}
 
 	// Hides the grid, if it is showing
 	if (showGrid == true){ showGrid = false }
@@ -211,6 +213,11 @@ function setTrack(){
 	incrTime.size(buttonWidth, buttonHeight)
 	incrTime.position(20 + (buttonWidth + 5)*2, canvas.height - buttonHeight - 20)
 	incrTime.mousePressed( () => {maxticks += 100} )
+
+	showGraph = createButton("Show graphs")
+	showGraph.size(buttonWidth, buttonHeight)
+	showGraph.position(20 + (buttonWidth + 5)*3, canvas.height - buttonHeight - 20)
+	showGraph.mousePressed( () => {drawGraphs = !drawGraphs} )
 
 	phase = "setup"
 }
