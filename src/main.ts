@@ -3,7 +3,7 @@ import p5 from 'p5';
 import { createTrackBuilder, setTrack, drawTrackSelection, handleTrackBuilderKeyPress } from "./ui/trackBuilder"
 import { newVector, Vector } from './Vector';
 import Car from './Car';
-import { supercarPreset, f1CarPreset, CarPreset } from './cars/carPresets';
+import { supercarPreset, f1CarPreset, CarPreset, unoWithLadderPreset } from './cars/carPresets';
 import { NeuralNet, NeuralNetTrace } from './NeuralNet';
 import Track, { TrackPieceType } from './Track';
 import { drawNeuralNet } from './ui/neuralNetViz';
@@ -22,6 +22,7 @@ import theKingImage from '../images/cars/king.png'
 import chickHicksImage from '../images/cars/chickhicks2.png'
 import sennaImage from '../images/cars/senna2.png'
 import formula1Image from '../images/cars/formula1.png'
+import unoImage from '../images/cars/uno2.png'
 
 
 //---------- SMART RACE 2 ----------
@@ -309,6 +310,7 @@ export default class Game {
 	preload() {
 		this.p.loadImage(carImage, img => { img.resize(40, 20); this.carSprite = img; this.carTypeSprites.set("car", img) })
 		this.p.loadImage(formula1Image, img => { img.resize(40, 20); this.carTypeSprites.set("formula1", img) })
+		this.p.loadImage(unoImage, img => { img.resize(40, 20); this.carTypeSprites.set("uno", img) })
 		this.backgroundImage = this.p.loadImage(grassImage)
 		//carSprite = loadImage("car.png")
 		// carSprite = this.p.loadImage("https://raw.githubusercontent.com/Vtchoo/smartRace2/master/images/car.png")

@@ -55,3 +55,24 @@ export const f1CarPreset: CarPreset = {
     downforceCoefficient: 3.5,
     spriteKey: "formula1",
 }
+
+/**
+ * Fiat Uno (com escada)
+ * ~1500 hp, 820 kg, absurd grip and downforce
+ * The ladder adds structural rigidity. And downforce.
+ */
+export const unoWithLadderPreset: CarPreset = {
+    wheelbase: 2.46,
+    maxSteeringAngle: Math.PI / 5,
+    tireGripCoefficient: 2.5,   // F1 * 1.25
+    mass: 820,
+    maxAcceleration: 20.0,
+    maxBraking: 50.0,
+    maxReverseSpeed: 8.0,
+    maxPower: 1125000,           // F1 * 1.5
+    frontalArea: 1.9,
+    dragCoefficient: 0.42,
+    rollingResistanceCoeff: 0.018,
+    downforceCoefficient: 5.25, // F1 * 1.5
+    spriteKey: "uno",
+}
